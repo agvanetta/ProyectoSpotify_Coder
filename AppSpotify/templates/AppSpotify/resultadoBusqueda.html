@@ -1,0 +1,47 @@
+{% extends "AppSpotify/padre.html" %}
+
+{% load static %}
+
+{% block contenidoDinamico %}
+
+<div class="body__container">
+    <div class="body__user">
+        <div class="body__user__container">
+            <span>👽</span><div>Agustín</div>
+        </div>
+    </div>
+
+    <div class="title">Busqueda</div>
+
+    <div class="perfil__container__lista" >
+        <div class="formulario__text">Perfil</div>
+        <div class="form">
+            <form class="form__perfil" action="/AppSpotify/buscar/" method="GET">
+                <input id="input" type="text" name="dni" id="dni" placeholder=" Ingrese DNI del perfil">
+                <br>
+                <input class="button__enviar2" type="submit" value="Buscar">
+            </form>
+        </div>
+
+        {% if perfiles %}
+        <div>
+            <div>Datos del perfil:</div>
+            <ul>
+            {% for perfil in perfiles %}
+                <li>{{perfil.nombre}}</li>
+                <li>{{perfil.apellido}}</li>
+                <li>{{perfil.dni}}</li>
+                <li>{{perfil.fechaDeNacimiento}}</li>
+                <li>{{perfil.relacion}}</li>
+                <li>{{perfil.generosFavoritos}}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% else %}
+        <div>No se encontro el perfil con DNI "{{dni}}", intente con otro numero de documento.</div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

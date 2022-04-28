@@ -1,0 +1,36 @@
+{% extends "AppSpotify/padre.html" %}
+
+{% load static %}
+
+{% block contenidoDinamico %}
+
+<div class="body__container">
+    <div class="body__user">
+        <div class="body__user__container">
+            <span>👽</span><div>Agustín</div>
+        </div>
+    </div>
+    <div class="title">Agregar Perfil</div>
+    <div class="perfil__container">
+        <div class="perfil__container__form">
+            <div class="formulario__text">Nuevo Perfil</div>
+            <div class="form">
+                <form action="/AppSpotify/perfil/" method="POST"> {% csrf_token %}
+
+                    <p>Nombre: <br><input type="text" name="nombre" placeholder="Ingrese un nombre"></p>
+                    <p>Apellido: <br><input type="text" name="apellido" placeholder="Ingrese un apellido"></p>
+                    <p>DNI:<br> <input type="number" name="dni" placeholder="Ingrese DNI"></p>
+                    <p>Fecha de Nacimiento: <br><input type="date" name="fechaDeNacimiento"></p>
+                    <p>Relacion:<br> <input type="text" name="relacion" placeholder="Hijo"></p>
+                    <p>Generos Favoritos: <br><input type="text" name="generosFavoritos" 
+                        placeholder="Rock, Pop"></p>
+
+                    <input class="button__enviar" type="submit" value="Enviar">
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

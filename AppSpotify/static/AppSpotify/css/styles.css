@@ -1,0 +1,333 @@
+*{
+    margin: 0;
+    color: white;
+    font-family: Google Sans,arial,sans-serif-medium,sans-serif;
+}
+
+header{
+    height: 87vh;
+    width: 250px;
+    background-color: black;
+    position: fixed;
+}
+
+body{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.85) 0,#121212 100%);
+    margin-bottom: 25vh;
+}
+
+footer{
+    height: 13vh;
+    width: 100%;
+    background-color: #181818;
+    border-top: 1px solid #24282a;
+    float: right;
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+}
+
+
+
+/* HEADER */
+
+.header__container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    position: fixed;
+}
+
+.header__favoritos{
+    border-top: 1px solid #24282a;
+    margin-right: 25px;
+}
+
+.header__favoritos__text{
+    font-size: 15px;
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.685);
+}
+
+.header__favoritos__text:hover{
+    color: white;
+    transition: .5s;
+}
+
+.header__icons{
+    padding-right: 20px;
+}
+
+.header__logo_{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo__img{
+    padding-top: 25px;
+    height: 50px;
+    width: 170px;
+}
+
+.header__menu{
+    padding: 50px 0px;
+}
+
+.header__menu__options{
+    color: rgba(225, 223, 220, 0.915);
+    display: flex;
+    align-items: center;
+    padding: 15px 0px;
+}
+
+.header__menu__options:hover{
+    color: white;
+    transition: .5s;
+}
+
+.header__text{
+    font-weight: 700;
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* BODY */
+.body__container{
+    float: right;   
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 250px);
+    font-family: 'Lato', sans-serif;  
+}
+
+.body__user{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.801);
+    justify-content: flex-end;
+    padding: 20px 80px 20px 0px;
+}
+
+.body__user__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 20px;
+    width: 130px;
+    height: 30px;
+}
+
+.body__user__container:hover{
+    background-color: #202122;
+    transition: .5s;
+}
+.body__user__container span{
+    padding-right: 10px;
+}
+
+img{
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+}
+
+.body__canciones{
+    display: flex;
+    justify-content: space-evenly
+}
+
+.card{
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #171717;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    justify-content: center;
+}
+
+.card:hover{
+    background-color: #222222;
+    transition: .5s;
+
+}
+
+.card__artist{
+    padding-top: 5px;
+    color: #818689;
+    font-size: 13px;
+}
+
+.card__name{
+    padding-top: 5px;
+}
+
+.title{
+    padding-top: 10px;
+    padding-left: 20px;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.title:hover{
+    text-decoration: underline;
+    transition: .5s;
+}
+
+/* FOOTER */
+
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__top{
+    display: flex;
+}
+
+.footer__top div{
+    padding: 20px 10px 5px 10px;
+}
+
+.line{
+    width: 400px;
+    border-top:solid 4px grey;
+    margin-top: 10px;
+}
+
+.footer__bot{
+    display: flex;
+}
+
+.footer__bot__text{
+    font-size: 12px;
+    color: rgb(183, 174, 174);
+    padding: 5px;
+    align-items: initial;
+}
+
+/* Perfil */
+
+.perfil__container{
+
+    padding-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly
+}
+
+.perfil__container div{
+    padding: 10px 20px;
+    background-color: rgb(30, 29, 29);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    align-items: center;
+}
+
+.form form p{
+    padding: 5px 0;
+}
+
+.form form p input{
+    height: 25px;
+    width: 250px;
+    margin: 5px 0;
+    background-color: #3a3a3b;
+    border-radius: 10px;
+    border: 0;
+}
+
+.form form p input:hover{
+    background-color: #545456;
+}
+
+.formulario__text{
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button__enviar{
+    margin-left: 35%;
+    align-items: center;
+    margin-top: 5px;
+    background-color: #24282a;
+    border: 0;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.button__enviar:hover{
+    background-color: white;
+    color: black;
+    transition: .5s;
+}
+
+/* Biblioteca */
+
+.perfil__container__lista{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+.perfil__container__lista div{
+    padding: 10px;
+}
+
+.form__perfil{
+    display: flex;
+    flex-direction: column;
+}
+
+.button__enviar2{
+    width: 50%;
+    align-items: center;
+    margin-top: 5px;
+    background-color: #24282a;
+    border: 0;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.button__enviar2:hover{
+    background-color: white;
+    color: black;
+    transition: .5s;
+}
+
+#input{
+    color: black;
+    height: 25px;
+    width: 250px;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 0;
+}
+
+.form form p input{
+    height: 25px;
+    width: 250px;
+    margin: 5px 0;
+    background-color: #3a3a3b;
+    border-radius: 10px;
+    border: 0;
+}
+
+.form form p input:hover{
+    background-color: #545456;
+}

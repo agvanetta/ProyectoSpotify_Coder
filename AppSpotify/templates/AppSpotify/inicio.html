@@ -1,0 +1,70 @@
+{% extends "AppSpotify/padre.html" %}
+{% load static %}
+{% block contenidoDinamico %}
+
+<div class="body__container">
+    <div class="body__user">
+        <div class="body__user__container">
+            <span>👽</span><div>Agustín</div>
+        </div>
+    </div>
+    <div class="title">Top five Canciones</div>
+    <div class="body__canciones">
+        <div class="card">
+            <div class="card__image"> <img class="img" src="https://images.genius.com/f46ec0862840eaadce3043ec0d568c30.1000x1000x1.png" alt="paulo"></div>
+            <div class="card__name">Paulo Londa:Bzrp, Vol. 23</div>
+            <div class="card__artist">Bizarrap, Paulo Londa</div>
+        </div>
+        <div class="card">
+            <div class="card__image"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7u_gjU5ujW9z_VpIMKgb_lQ__hJvK45LH8g&usqp=CAU" alt="lit"></div>
+            <div class="card__name">La trampa es ley</div>
+            <div class="card__artist">Lit Killah</div>
+        </div>
+        <div class="card">
+            <div class="card__image"> <img src="https://i1.sndcdn.com/artworks-Gc4hnGGXIb1VYnH9-rqtCag-t500x500.jpg" alt="becerra"></div>
+            <div class="card__name">Maria Becerra</div>
+            <div class="card__artist">Felices por siempre</div>
+        </div>
+        <div class="card">
+            <div class="card__image"> <img src="https://images.genius.com/d2deabf63634c5a9c44f163fa8c4d93c.1000x1000x1.jpg" alt="yatra"></div>
+            <div class="card__name">Melancolicos Anonimos</div>
+            <div class="card__artist">Sebastian Yatra</div>
+        </div>
+        <div class="card">
+            <div class="card__image"><img src="https://yt3.ggpht.com/_6euKu5YdhXuAMBjVXYpx3_XTrjPcTh2EdwU3nJhWh1fa_MUoRwkl_kt-pYUq6OMnWNHcD7zKA=s900-c-k-c0x00ffffff-no-rj" alt="morat"></div>
+            <div class="card__name">Idiota</div>
+            <div class="card__artist">Morat, Danna Paola</div>
+        </div>
+    </div>
+
+    <div class="title">Top five Podcast</div>
+    <div class="body__canciones">
+        <div class="card">
+            <div class="card__image"> <img src="https://i.scdn.co/image/ab6765630000ba8aed5a69dbb3dfea06577eb8c4" alt="zica"></div>
+            <div class="card__name">Financiero Monetario</div>
+            <div class="card__artist">Leandro Zicarelli</div>
+        </div>
+        <div class="card">
+            <div class="card__image"> <img src="data:image/jpeg;base64,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" alt="10"></div>
+            <div class="card__name">10' Para cambiar el mundo</div>
+            <div class="card__artist">Mateo Salvatto</div>
+        </div>
+        <div class="card">
+            <div class="card__image"><img src="https://play-lh.googleusercontent.com/HUJ3xT5CSAnqIYesKhzLwSZwZFRSKE_raGfbYtNCv5J85DIJXvFs3n0VZWPkiQlPPg" alt="duo"></div>
+            <div class="card__name">Relatos en inglés</div>
+            <div class="card__artist">Duolingo</div>
+        </div>
+        <div class="card">
+            <div class="card__image"><img src="https://pbs.twimg.com/profile_images/902275102758375425/RSQNOD5i_400x400.jpg" alt="ted"></div>
+            <div class="card__name">Ted en Español</div>
+            <div class="card__artist">Ted</div>
+        </div>
+        <div class="card">
+            <div class="card__image"> <img src="https://pbs.twimg.com/profile_images/1346515262900727808/xtc9i6W__400x400.jpg" alt="icb"></div>
+            <div class="card__name">Mercados en la mira</div>
+            <div class="card__artist">ICB</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
