@@ -10,8 +10,24 @@
             <span>👽</span><div>Agustín</div>
         </div>
     </div>
-    <div class="title">Agregar Favoritos</div>
-    <div> Pendiente de desarrollo </div>
+    <div class="title">Agregar Contenido</div>
+    <div class="perfil__container">
+        <div class="perfil__container__form">
+            <div class="formulario__text">Nuevo favorito</div>
+            <div class="form">
+                <form action="/AppSpotify/favoritos/" method="POST"> {% csrf_token %}
+
+                    <p>Nombre: <br><input type="text" name="nombre" placeholder="Ingrese un nombre"></p>
+                    <p>Artista: <br><input type="text" name="artista" placeholder="Ingrese un artista"></p>
+                    <p>Album: <br><input type="text" name="album" 
+                        placeholder="Ingrese album"></p>
+
+                    <input class="button__enviar" type="submit" value="Enviar">
+
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

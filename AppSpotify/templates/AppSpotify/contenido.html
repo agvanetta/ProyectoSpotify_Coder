@@ -11,7 +11,23 @@
         </div>
     </div>
     <div class="title">Agregar Contenido</div>
-    <div> Pendiente de desarrollo </div>
+    <div class="perfil__container">
+        <div class="perfil__container__form">
+            <div class="formulario__text">Nuevo Contenido</div>
+            <div class="form">
+                <form action="/AppSpotify/contenido/" method="POST"> {% csrf_token %}
+
+                    <p>Nombre: <br><input type="text" name="nombre" placeholder="Ingrese un nombre"></p>
+                    <p>Artista: <br><input type="text" name="artista" placeholder="Ingrese un artista"></p>
+                    <p>Tipo: <br><input type="text" name="tipo" 
+                        placeholder="Ej: Podcast, Cancion, Audiolibro, etc"></p>
+
+                    <input class="button__enviar" type="submit" value="Enviar">
+
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
