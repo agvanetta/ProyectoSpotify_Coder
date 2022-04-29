@@ -1,7 +1,11 @@
 # ProyectoSpotify_Coder
 Proyecto v1 (Pre entrega final) para el curso Python - Coderhouse
 
-View: https://agvanetta.github.io/Spotify/
+El proyecto debe descargarse y ejecutarse mediante "python manage.py runserver"; el mismo correra en la direccion http://localhost:8000 , cuenta con 2 ramas principales: <br>
+APP : http://localhost:8000/AppSpotify/ <br>
+Administracion de Django: http://localhost:8000/admin/<br>
+
+ ### Se puede ver un test de la viev aqui: https://agvanetta.github.io/Spotify/
 
 El proyecto utiliza Herencia HTML, Css, Djando Framework, Programacion orientada a objetos con Python como lenguaje de programación, SQLite, superusuario, interaccion con BD mediante GET y POST.
 
