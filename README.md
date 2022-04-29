@@ -12,22 +12,29 @@ El proyecto utiliza Patron MVT, Herencia HTML, Css, Djando Framework, Programaci
 
 ## A tener en cuenta:
 
-1) Credenciales para administrar superusuario <br> 
+### 1) Credenciales para administrar superusuario <br> 
 Username : agvanetta <br> 
 pw: agvanetta123
 
-2) Funcionalidades<br> 
-  A- Pestaña "Inicio" en sidebar: Muestra la "Home" de la aplicacion <br> 
-  B- Pestaña "Buscar" en sidebar: Mediante el metodo GET permite buscar el perfil POR NUMERO DE DNI y renderizar abajo los datos del mismo, en caso de ingresar un DNI    que no esta en la BD arroja : " No se encontro el perfil con DNI "37732203", intente con otro numero de documento. " , si no se ingresan datos renderiza un HTML sin    style con la leyenda " No enviaste datos " (Volver atras en este caso). <br> 
-  C- Pestaña "Agregar Perfil", "Agregar a favoritos" y "Subir Contenido" en sidebar: Permiten generar un nuevo objeto en la aplicacion, el mismo utiliza metodo post para enviar los datos a la BD.<br> 
-  D- En el footer se encuentra disponible una cancion que al "navegar" por las distintas pestañas se reiniciara al tener que renderizar todo el html.<br> 
+### 2) Funcionalidades <br>
   
- 3) Datos en la BD precargados (models):<br> 
+ A- Pestaña "Inicio" en sidebar: Muestra la "Home" de la aplicacion <br> 
+     <br> 
+  
+   B- Pestaña "Buscar" en sidebar: Mediante el metodo GET permite buscar el perfil POR NUMERO DE DNI y renderizar abajo los datos del mismo, en caso de ingresar un DNI    que no esta en la BD arroja : " No se encontro el perfil con DNI "37732203", intente con otro numero de documento. " , si no se ingresan datos renderiza un HTML sin    style con la leyenda " No enviaste datos " (Volver atras en este caso). <br> 
+  <br> 
+   C- Pestaña "Agregar Perfil", "Agregar a favoritos" y "Subir Contenido" en sidebar: Permiten generar un nuevo objeto en la aplicacion, el mismo utiliza metodo post para enviar los datos a la BD.<br> 
+  <br> 
+   D- En el footer se encuentra disponible una cancion que al "navegar" por las distintas pestañas se reiniciara al tener que renderizar todo el html.<br> 
+  
+ ### 3) Datos en la BD precargados (models):<br> 
   A- Contenido= Plan A / Paulo Londra / Cancion <br> 
+  
   B- Favoritos= Chance / Paulo Londra / Sensillo <br> 
-  C- Perfiles= 	<br> 
-    Giovanni, Vanetta (DNI para buscar en la BD: 57353461) <br> 
-    Agustin, Vanetta (DNI para buscar en la BD: 34440691) <br> 
-    Luca, Vanetta (DNI para buscar en la BD: 1231273) <br> 
+  
+  C- Perfiles:	<br> 
+     Giovanni, Vanetta (DNI para buscar en la BD: 57353461) <br> 
+     Agustin, Vanetta (DNI para buscar en la BD: 34440691) <br> 
+     Luca, Vanetta (DNI para buscar en la BD: 1231273) <br> 
 
 ### Desarrollo: Agustín Vanetta
