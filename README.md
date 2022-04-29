@@ -7,7 +7,7 @@ Administracion de Django: http://localhost:8000/admin/<br>
 
  ### Se puede ver un test de la viev aqui: https://agvanetta.github.io/Spotify/
 
-El proyecto utiliza Patron MVT, Herencia HTML, Css, Djando Framework, Programacion orientada a objetos con Python como lenguaje de programación, SQLite, superusuario, interaccion con BD mediante GET y POST.
+El proyecto utiliza Patron MVT, Herencia HTML, CSS ( + Responsive), Djando Framework, Programacion orientada a objetos con Python como lenguaje de programación, SQLite, superusuario, interaccion con BD mediante GET y POST.
 
 
 ## A tener en cuenta:
