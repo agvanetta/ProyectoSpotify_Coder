@@ -5,7 +5,7 @@ El proyecto debe descargarse y ejecutarse mediante "python manage.py runserver";
 APP : http://localhost:8000/AppSpotify/ <br>
 Administracion de Django: http://localhost:8000/admin/<br>
 
- ### Se puede ver un test de la viev aqui: https://agvanetta.github.io/Spotify/
+ ### Se puede ver un test de la view aqui: https://agvanetta.github.io/Spotify/
 
 El proyecto utiliza Patron MVT, Herencia HTML, CSS ( + Responsive), Djando Framework, Programacion orientada a objetos con Python como lenguaje de programación, SQLite, superusuario, interaccion con BD mediante GET y POST.
 
