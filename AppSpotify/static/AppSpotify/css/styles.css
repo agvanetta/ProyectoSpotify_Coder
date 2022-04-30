@@ -397,3 +397,83 @@ img{
 #decoration:hover{
     text-decoration: none;
 }
+audio{
+    height: 30px;
+}
+
+/* Responsive 
+ 480px Maxima de celulares (600)
+ 481 - 768 tablet
+ 769-1200px Monitores*/ 
+
+ @media screen and (max-width: 768px) {
+    
+    header{
+        height: unset;
+        display: flex;
+        width: 100%;
+        position: unset;
+    }
+    .header__container{
+        padding-left: 15px;
+        position: unset;
+        width: 100%;
+
+    }
+    .header__logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+   .header__menu{
+       display: flex;
+       width: 100%;
+       padding: unset;
+       justify-content: space-evenly;
+   }
+   .header__icons{
+       display: none;
+   }
+   .header__personal{
+    text-align: center;
+       display: flex;
+       justify-content: space-evenly;
+   }
+   
+   /*Body*/
+   .title{
+       font-size: 20px;
+       padding-top: 20px;
+   }
+   .body__canciones{
+       justify-content: space-evenly
+   }
+
+   .body__user{
+       padding:20px;
+   }
+   
+   .body__container{
+       width: 100%;
+   }
+   /*Footer*/
+   .footer{
+       flex-direction: column;
+       justify-content: space-evenly;
+       bottom: -1px;
+   }
+   .footer__right{
+       display: none;
+
+       margin-right: 0px;
+   }
+   audio{
+       height: 30px;
+   }
+   .footer__bot{
+       margin-left: unset;
+   }
+   .footer__left{
+       padding: 0px;
+   }
+}
