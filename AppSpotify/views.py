@@ -76,7 +76,7 @@ def editarPerfil(request, dni):
 
         miFormulario = PerfilFormulario(request.POST) # llega la data
 
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             informacion = miFormulario.cleaned_data
 
             perfil.nombre=informacion['nombre']
@@ -88,7 +88,7 @@ def editarPerfil(request, dni):
 
             perfil.save()
 
-            return render(request, "AppSpotify/traerPerfiles.html")
+            return render(request, "AppSpotify/biblioteca.html")
     #else
     else:
         miFormulario=PerfilFormulario(initial={"nombre":perfil.nombre,"apellido":perfil.apellido, 
