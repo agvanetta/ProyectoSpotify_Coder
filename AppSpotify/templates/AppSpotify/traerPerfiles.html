@@ -1,0 +1,56 @@
+{% extends "AppSpotify/padre.html" %}
+
+{% load static %}
+
+{% block contenidoDinamico %}
+
+<div class="body__container">
+    <div class="body__user">
+        <div class="body__user__container">
+            <span>👽</span><div>Agustín</div>
+        </div>
+    </div>
+
+    <div class="title">Busqueda</div>
+
+    <div class="perfil__container__lista" >
+        <div class="formulario__text">Perfil</div>
+        <div class="form">
+            <form class="form__perfil" action="/AppSpotify/buscar/" method="GET">
+                <input id="input" type="text" name="dni" id="dni" placeholder=" Ingrese DNI del perfil">
+                <br>
+                <input class="button__enviar2" type="submit" value="Buscar">
+            </form>
+        </div>
+
+        {% if perfiles %}
+        <div>
+            <div style="font-size: 20px;">Perfiles:</div>
+            <ul style="list-style: none;">
+            {% for perfil in perfiles %}
+                <li><span style="color: #1DB954; font-weight: 600;">Nombre: </span>{{perfil.nombre}}</li>
+                <li>Apellido: {{perfil.apellido}}</li>
+                <li>DNI: {{perfil.dni}}</li>
+                <li>Fecha de nacimiento: {{perfil.fechaDeNacimiento}}</li>
+                <li>Relacion: {{perfil.relacion}}</li>
+                <li>Genero favorito: {{perfil.generosFavoritos}}</li>
+                <br>
+                <button class="button__listar">
+                    <a style="text-decoration: none;" href="{% url 'EliminarPerfil' perfil.dni %}"> Eliminar </a>
+                </button>
+                <button class="button__listar">
+                    <a style="text-decoration: none;" href="{% url 'EditarPerfil' perfil.dni %}"> Editar </a>
+                </button>
+                <br>
+                <br>
+            {% endfor %}
+            </ul>
+        </div>
+        {% else %}
+        <div>No hay perfiles cargados en sistema.</div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

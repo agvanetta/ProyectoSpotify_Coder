@@ -22,25 +22,16 @@
                 <input class="button__enviar2" type="submit" value="Buscar">
             </form>
         </div>
+    </div>
 
-        <!-- {% if perfiles %}
-        <div>
-            <div>Datos del perfil:</div>
-            <ul>
-            {% for perfil in perfiles %}
-                <li>{{perfil.nombre}}</li>
-                <li>{{perfil.apellido}}</li>
-                <li>{{perfil.dni}}</li>
-                <li>{{perfil.fechaDeNacimiento}}</li>
-                <li>{{perfil.relacion}}</li>
-                <li>{{perfil.generosFavoritos}}</li>
-            {% endfor %}
-            </ul>
+    <div class="perfil__container__lista">
+        <div style="font-size: 20px; margin-top: 30px; margin-bottom: -20px;" class="formulario__text">Listar todos los&nbsp;<span style="color: #1DB954;"> perfiles</span></div>
+        <div class="form">
+            <form class="form__perfil" action="/AppSpotify/buscarTodos/" method="GET">
+                <br>
+                <input class="button__listar" type="submit" value="Listar">
+            </form>
         </div>
-        {% else %}
-        <div>No se encontro el perfil con DNI "{{dni}}", intente con otro numero de documento.</div>
-        {% endif %} -->
-
     </div>
 </div>
 

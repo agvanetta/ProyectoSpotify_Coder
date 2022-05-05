@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from AppSpotify.forms import PerfilFormulario
 
 from AppSpotify.models import Contenido, Favoritos, Perfil
 
@@ -42,10 +43,56 @@ def biblioteca(request):
 def buscar(request):
     if request.GET.get('dni'):
         dni = request.GET.get('dni')
-        perfiles = Perfil.objects.filter(dni__icontains=dni)
+        perfiles = Perfil.objects.filter(dni__iexact=dni)
 
         return render(request,"AppSpotify/resultadoBusqueda.html", {"perfiles":perfiles, "dni":dni})
     else:
         respuesta = "No enviaste datos"
 
     return HttpResponse(respuesta)
+
+def buscarTodos(request):
+    
+    perfiles = Perfil.objects.all()
+    contexto={"perfiles":perfiles}
+
+    return render(request,"AppSpotify/traerPerfiles.html", contexto)
+   
+def borrarPerfil(request, dni): #dni_perfil viene por parametro en el metodo DELETE
+    dni = dni
+    perfil= Perfil.objects.filter(dni__iexact=dni)
+    perfil.delete()
+
+    perfiles = Perfil.objects.all()
+    contexto={"perfiles":perfiles}
+
+    return render(request,"AppSpotify/traerPerfiles.html", contexto)
+
+def editarPerfil(request, dni):
+    dni = dni
+    perfil= Perfil.objects.get(dni__iexact=dni)
+
+    if request.method == "POST":
+
+        miFormulario = PerfilFormulario(request.POST) # llega la data
+
+        if miFormulario.is_valid:
+            informacion = miFormulario.cleaned_data
+
+            perfil.nombre=informacion['nombre']
+            perfil.apellido=informacion["apellido"]
+            perfil.dni=informacion["dni"]
+            perfil.fechaDeNacimiento=informacion["fechaDeNacimiento"]
+            perfil.relacion=informacion["relacion"]
+            perfil.generosFavoritos=informacion["generosFavoritos"]
+
+            perfil.save()
+
+            return render(request, "AppSpotify/traerPerfiles.html")
+    #else
+    else:
+        miFormulario=PerfilFormulario(initial={"nombre":perfil.nombre,"apellido":perfil.apellido, 
+        "dni":perfil.dni,"fechaDeNacimiento":perfil.fechaDeNacimiento,"relacion":perfil.relacion,
+        "generosFavoritos":perfil.generosFavoritos})
+    
+    return render(request, "AppSpotify/editarPerfil.html", {"miFormulario":miFormulario, "perfil":perfil})

@@ -1,0 +1,28 @@
+{% extends "AppSpotify/padre.html" %}
+
+{% load static %}
+
+{% block contenidoDinamico %}
+<div class="body__container">
+    <div class="body__user">
+        <div class="body__user__container">
+            <span>👽</span><div>Agustín</div>
+        </div>
+    </div>
+    <div class="title">Editar Perfil </div>
+    <div class="perfil__container">
+        <div class="perfil__container__form">
+            <div class="formulario__text">Ingrese los datos</div>
+            <div class="form"  >
+                <form action="" method="POST" id="form"> {%csrf_token%}
+                    <table>
+                        {{miFormulario.as_table}}
+                    </table>
+                    <input style="margin-top: 10px;" class="button__enviar" type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
