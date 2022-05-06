@@ -1,0 +1,56 @@
+{% extends "AppSpotify/padre.html" %}
+
+{% load static %}
+
+{% block contenidoDinamico %}
+
+<div class="body__container">
+    <div class="body__user">
+        <div class="body__user__container">
+            <span>👽</span><div>Agustín</div>
+        </div>
+    </div>
+
+    <div class="title">Busqueda</div>
+
+    <div class="perfil__container__lista" >
+        <div class="formulario__text">Favoritos</div>
+        <div class="form">
+            <form class="form__perfil" action="/AppSpotify/buscar/" method="GET">
+                <input id="input" type="text" name="dni" id="dni" placeholder=" Ingrese nombre">
+                <br>
+                <input class="button__enviar2" type="submit" value="Buscar">
+            </form>
+        </div >
+        {% if object_list %}
+        <div>
+            <div style="font-size: 20px;">Canciones Favoritas:</div>
+            <div class="card__container" style="display:flex ; flex-wrap: wrap;">
+            {% for favoritos in object_list %}
+                <div class="card">
+                    <div class="card__image"> <img src="https://icones.pro/wp-content/uploads/2021/03/icone-de-la-musique-verte.png" alt="lit"></div>
+                    <div class="card__name"><span style="color: #1DB954; font-weight: 600;">Nombre: </span>{{favoritos.nombre}}</div>
+                    <div class="card__artist" style="color: white; padding-top: 0; padding-bottom: 0;">Artista: {{favoritos.artista}}</div>
+                    <div class="card__artist">Album: {{favoritos.album}}</div>
+                    <div style="align-items: center; display: flex; justify-content: space-evenly;width: 180px;">
+                        <button class="button__listar" style="width: 70px;padding: 5px 0;">
+                            <a style="text-decoration: none;" href="{% url 'Delete' favoritos.id %}"> Eliminar </a>
+                        </button>
+                        <button class="button__listar" style="width: 70px;padding: 5px 0;">
+                            <a style="text-decoration: none;" href="{% url 'Edit' favoritos.id %}"> Editar </a>
+                        </button>
+                    </div>
+                </div>
+            <br>
+            {% endfor %}
+        </div>
+
+        </div>
+        {% else %}
+        <div>No hay favoritos cargados en sistema.</div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

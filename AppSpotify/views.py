@@ -1,6 +1,9 @@
+from re import template
 from django.http import HttpResponse
 from django.shortcuts import render
 from AppSpotify.forms import PerfilFormulario
+from django.views.generic import ListView
+from django.views.generic.edit import UpdateView, DeleteView 
 
 from AppSpotify.models import Contenido, Favoritos, Perfil
 
@@ -96,3 +99,23 @@ def editarPerfil(request, dni):
         "generosFavoritos":perfil.generosFavoritos})
     
     return render(request, "AppSpotify/editarPerfil.html", {"miFormulario":miFormulario, "perfil":perfil})
+
+def misContenidos(request):
+    return render(request, "AppSpotify/misContenidos.html")
+
+def misFavoritos(request):
+    return render(request, "AppSpotify/misFavoritos.html")
+
+class FavoritosList(ListView):
+    model=Favoritos
+    template_name="AppSpotify/traerFavoritos.html"
+
+class FavoritosDelete(DeleteView):
+    model=Favoritos
+    success_url = "/AppSpotify/favoritos/lista"
+
+class FavoritosUpdate(UpdateView):
+    model=Favoritos
+    success_url = "/AppSpotify/favoritos/lista"
+    fields= ["nombre","artista","album"]
+    

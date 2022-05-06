@@ -9,16 +9,14 @@
             <span>👽</span><div>Agustín</div>
         </div>
     </div>
-    <div class="title">Editar Perfil </div>
+    <div class="title">Editar favorito </div>
     <div class="perfil__container">
         <div class="perfil__container__form">
             <div class="formulario__text">Ingrese los datos</div>
             <div class="form"  >
-                <form action="" method="POST" id="form"> {%csrf_token%}
-                    <table>
-                        {{miFormulario.as_table}}
-                    </table>
-                    <input style="margin-top: 10px;" class="button__enviar" type="submit" value="Enviar cambios">
+                <form id="favoritos__form" action="" method="POST" id="form"> {%csrf_token%}
+                        <div style="width: 100% ; text-align: center">¿Estas seguro que deseas borrar a "{{object}}"? </div>
+                    <section><input style="margin-top: 10px;" class="button__enviar" type="submit" view="Si" value="Si"></section>
                 </form>
             </div>
         </div>

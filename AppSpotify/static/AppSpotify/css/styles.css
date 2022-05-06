@@ -51,7 +51,8 @@ footer{
 }
 
 .header__favoritos__text:hover{
-    color: white;
+    cursor: pointer;
+    color: #1DB954;
     transition: .5s;
 }
 
@@ -83,7 +84,7 @@ footer{
 }
 
 .header__menu__options:hover{
-    color: white;
+    color: rgb(255, 255, 255);
     transition: .5s;
 }
 
@@ -91,6 +92,10 @@ footer{
     font-weight: 700;
     color: inherit;
     text-decoration: none;
+}
+
+.header__text:hover{
+    color: #1DB954;
 }
 
 
@@ -215,6 +220,7 @@ img{
 }
 
 .footer__left h1:hover{
+    cursor: pointer;
     text-decoration:underline;
 }
 
@@ -225,6 +231,7 @@ img{
 }
 
 .footer__left h2:hover{
+    cursor: pointer;
     text-decoration:underline;
 }
 
@@ -354,6 +361,11 @@ img{
     padding: 5px 15px;
 }
 
+.button__listar:hover{
+    background-color: #3e40429a;
+    transition: .5s;
+}
+
 #input{
     color: black;
     height: 25px;
@@ -362,6 +374,21 @@ img{
     border-radius: 10px;
     border: 0;
 }
+
+#favoritos__form{
+    width: 80%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#favoritos__form section input{
+    margin:0;
+}
+
+
 
 .form form p input{
     height: 25px;
