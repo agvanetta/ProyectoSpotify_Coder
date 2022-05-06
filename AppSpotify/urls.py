@@ -12,9 +12,14 @@ urlpatterns = [
 
     ## end perfiles ##
 
-    ## contenido ##
+    ## Contenido ##
     path('contenido/', views.contenido, name="Contenido"),
     path('miscontenidos/', views.misContenidos, name="misContenidos"),
+    path("contenido/lista", views.ContenidoList.as_view(), name="contenidosList"),
+    ##expresiones regulares##
+    path(r'^editar/(?P<pk>\d+)$', views.ContenidoUpdate.as_view(), name="Edit"),
+    path(r'^borrar/(?P<pk>\d+)$', views.ContenidoDelete.as_view(), name="Delete"),
+
 
     ## Favoritos ##
     path('favoritos/', views.favoritos, name="Favoritos"),

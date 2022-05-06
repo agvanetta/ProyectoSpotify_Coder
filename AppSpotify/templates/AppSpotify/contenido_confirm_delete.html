@@ -1,0 +1,26 @@
+{% extends "AppSpotify/padre.html" %}
+
+{% load static %}
+
+{% block contenidoDinamico %}
+<div class="body__container">
+    <div class="body__user">
+        <div class="body__user__container">
+            <span>👽</span><div>Agustín</div>
+        </div>
+    </div>
+    <div class="title">Editar contenido </div>
+    <div class="perfil__container">
+        <div class="perfil__container__form">
+            <div class="formulario__text">Ingrese los datos</div>
+            <div class="form"  >
+                <form id="favoritos__form" action="" method="POST" id="form"> {%csrf_token%}
+                        <div style="width: 100% ; text-align: center">¿Estas seguro que deseas borrar a "{{object}}"? </div>
+                    <section><input style="margin-top: 10px;" class="button__enviar" type="submit" view="Si" value="Si"></section>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

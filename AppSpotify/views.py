@@ -100,8 +100,25 @@ def editarPerfil(request, dni):
     
     return render(request, "AppSpotify/editarPerfil.html", {"miFormulario":miFormulario, "perfil":perfil})
 
+## Contenidos ##
+
 def misContenidos(request):
     return render(request, "AppSpotify/misContenidos.html")
+
+class ContenidoList(ListView):
+    model=Contenido
+    template_name="AppSpotify/traerContenidos.html"
+
+class ContenidoDelete(DeleteView):
+    model = Contenido
+    success_url = "/AppSpotify/contenido/lista"
+
+class ContenidoUpdate(UpdateView):
+    model = Contenido
+    success_url = "/AppSpotify/contenido/lista"
+    fields= ["nombre","artista","tipo"]
+
+## FAVORITOS ##
 
 def misFavoritos(request):
     return render(request, "AppSpotify/misFavoritos.html")
