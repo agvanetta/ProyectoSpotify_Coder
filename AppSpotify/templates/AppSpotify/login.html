@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'AppSpotify/css/styles.css' %}" rel="stylesheet">
+
+    <title>Login</title>
+</head>
+<body style="margin-bottom: 0; background-color: black;" >
+    <div class='login' >
+        <div  class='login__left'>
+        <img class='login__img' id="login__gif" src=https://cdn.dribbble.com/users/8397981/screenshots/15955512/media/63c5be8eed650789c9fe53e94dbf9a05.gif  alt="logo" />
+          <div class='login__title'>
+             <img class='login__title__logo' id="login__img" src=https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png width="25" height="25" alt="logo" />
+             <div class='login__title__text'></div>
+          </div>
+        </div>      
+        <div class='login__right'>
+          <div><img class='login__right__img' id="login__img" src=https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png width=25 alt="logo"/></div>
+          <form class="login__form" action="" method="POST"> {% csrf_token %}
+
+            {{form.as_p}}
+    
+            <button type="submit">Iniciar Sesion</button>
+        </form>
+          <div class='login__footer'>Desing Agustin Vanetta</div>
+        </div > 
+      </div>
+</body  >
+</html>

@@ -532,3 +532,171 @@ audio{
    }
 }
 
+/* LOGIN */
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__form p{
+    padding: 5px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.login__form p input{
+    width: 200px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: unset;
+    border: 1px solid white;
+}
+
+.login__form button{
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    border-color: white;
+    margin-top: 20px;
+    padding: 7px;
+    font-weight: 600;
+}
+
+.login__form button:hover{
+    color: black;
+    background-color: #5AC53B;
+    transition: .3s;
+}
+
+.login{
+    background-color: black;
+    margin-top: -34px;
+    display: flex;
+    color: white;
+}
+
+.login__left{
+    height: 100vh;
+    width: 70%;
+}
+
+.login__footer{
+    padding: 10px;
+    font-size: 13px;
+    cursor:default;
+    font-style: italic;
+    position: absolute;
+    bottom: 0;
+}
+
+.login__footer:hover{
+    color: #59c53b80;
+}
+
+.login__input{
+    padding: 10px;
+    color: black;
+    background-color: rgb(193, 190, 190);
+    border-radius: 15px;
+    width: 250px;
+    border: 0;
+}
+
+.login__input:hover{
+    background-color: rgb(244, 241, 241);
+}
+
+#login__gif{
+    animation-duration: 20s;
+}
+
+#login__img{
+    padding-top: 10px;
+    height: 50px;
+    width: 170px;
+}
+
+.login__img{
+    height: 100vh;
+    width: 100%;
+}
+
+.login__right{
+    border-left: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+    width: 30%;
+}
+
+.login__right div{
+    padding-bottom: 20px;
+}
+
+.login__right__img{
+    padding-bottom: 10px;
+}
+
+.login__title{
+    background-color: black;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    mask-image: linear-gradient(to top, transparent 1%, black 70%);
+    padding-bottom: 15px;
+    padding-left: 15px;
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+
+.login__title__text{
+    padding-left: 10px;
+    padding-bottom: 3px;
+}
+
+.login__singInButton{
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    border-color: white;
+    padding: 7px 16px;
+    font-weight: 600;
+}
+
+.login__singInButton:hover{
+    color: black;
+    background-color: #5AC53B;
+    transition: .3s;
+}
+
+@media screen and (max-width: 768px) {
+    .login{
+        
+        flex-direction: column; 
+    }
+
+    .login__left{
+        height: unset;
+    }
+
+    .login__img{
+        display: none;
+    }
+
+    .login__right {
+        border-left: unset;
+        width: unset;
+    }
+
+    .login__title{
+        display: none;
+    }
+}

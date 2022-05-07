@@ -32,4 +32,8 @@ urlpatterns = [
 
     ## Inicio
     path('', views.inicio, name="Inicio"),
+
+    #Login
+    path('login', views.login_request, name="Login"),
+
 ]

@@ -4,14 +4,48 @@ from django.shortcuts import render
 from AppSpotify.forms import PerfilFormulario
 from django.views.generic import ListView
 from django.views.generic.edit import UpdateView, DeleteView 
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin #vistas basadas en clases
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, logout, authenticate
 from AppSpotify.models import Contenido, Favoritos, Perfil
 
-# Create your views here.
+## LOGIN ##
 
+def login_request(request):
+    if request.method == "POST": # al "iniciar sesion"
+        form = AuthenticationForm(request, data = request.POST) #ller la data del form
+
+        if form.is_valid():
+            usuario=form.cleaned_data.get("username")
+            contra=form.cleaned_data.get("password")
+            user=authenticate(username=usuario , password=contra)
+
+            if user:
+                login(request, user) #hacemos el login
+                #mostramos la pagina de inicio con un msj
+                return render(request, "AppSpotify/inicio.html", {'mensaje':f"Bienvenido{user}"})
+        
+        else:
+            return render(request, "AppSpotify/inicio.html",{"mensaje":"Error, datos incorrectos"})
+    
+    else:
+        form = AuthenticationForm() # mostrar el fomulario
+    
+    return render(request, "AppSpotify/login.html", {"form":form})
+
+## fin login ##
+
+
+## INICIO
 def inicio(request):
     return render(request, "AppSpotify/inicio.html")
+## FIN INICIO
 
+
+## views de la app ## 
+
+@login_required
 def perfil(request):
     if request.method == 'POST':
         perfil = Perfil(nombre=request.POST['nombre'], apellido=request.POST['apellido'],
@@ -22,6 +56,7 @@ def perfil(request):
         return render(request, "AppSpotify/perfil.html")
     return render(request, "AppSpotify/perfil.html")
 
+@login_required
 def contenido(request):
     if request.method == 'POST':
         contenido = Contenido(nombre=request.POST['nombre'], artista=request.POST['artista'],
@@ -31,6 +66,7 @@ def contenido(request):
         return render(request, "AppSpotify/contenido.html")
     return render(request, "AppSpotify/contenido.html")
 
+@login_required
 def favoritos(request):
     if request.method == 'POST':
         favorito = Favoritos(nombre=request.POST['nombre'], artista=request.POST['artista'],
@@ -40,9 +76,11 @@ def favoritos(request):
         return render(request, "AppSpotify/favoritos.html")
     return render(request, "AppSpotify/favoritos.html")
 
+@login_required
 def biblioteca(request):
     return render(request, "AppSpotify/biblioteca.html")
 
+@login_required
 def buscar(request):
     if request.GET.get('dni'):
         dni = request.GET.get('dni')
@@ -54,13 +92,15 @@ def buscar(request):
 
     return HttpResponse(respuesta)
 
+@login_required
 def buscarTodos(request):
     
     perfiles = Perfil.objects.all()
     contexto={"perfiles":perfiles}
 
     return render(request,"AppSpotify/traerPerfiles.html", contexto)
-   
+
+@login_required   
 def borrarPerfil(request, dni): #dni_perfil viene por parametro en el metodo DELETE
     dni = dni
     perfil= Perfil.objects.filter(dni__iexact=dni)
@@ -71,6 +111,7 @@ def borrarPerfil(request, dni): #dni_perfil viene por parametro en el metodo DEL
 
     return render(request,"AppSpotify/traerPerfiles.html", contexto)
 
+@login_required
 def editarPerfil(request, dni):
     dni = dni
     perfil= Perfil.objects.get(dni__iexact=dni)
@@ -102,36 +143,38 @@ def editarPerfil(request, dni):
 
 ## Contenidos ##
 
+@login_required
 def misContenidos(request):
     return render(request, "AppSpotify/misContenidos.html")
 
-class ContenidoList(ListView):
+class ContenidoList(LoginRequiredMixin, ListView):
     model=Contenido
     template_name="AppSpotify/traerContenidos.html"
 
-class ContenidoDelete(DeleteView):
+class ContenidoDelete(LoginRequiredMixin, DeleteView):
     model = Contenido
     success_url = "/AppSpotify/contenido/lista"
 
-class ContenidoUpdate(UpdateView):
+class ContenidoUpdate(LoginRequiredMixin, UpdateView):
     model = Contenido
     success_url = "/AppSpotify/contenido/lista"
     fields= ["nombre","artista","tipo"]
 
 ## FAVORITOS ##
 
+@login_required
 def misFavoritos(request):
     return render(request, "AppSpotify/misFavoritos.html")
 
-class FavoritosList(ListView):
+class FavoritosList(LoginRequiredMixin, ListView):
     model=Favoritos
     template_name="AppSpotify/traerFavoritos.html"
 
-class FavoritosDelete(DeleteView):
+class FavoritosDelete(LoginRequiredMixin, DeleteView):
     model=Favoritos
     success_url = "/AppSpotify/favoritos/lista"
 
-class FavoritosUpdate(UpdateView):
+class FavoritosUpdate(LoginRequiredMixin, UpdateView):
     model=Favoritos
     success_url = "/AppSpotify/favoritos/lista"
     fields= ["nombre","artista","album"]
