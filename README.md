@@ -12,8 +12,8 @@ El proyecto utiliza Patron MVT, Herencia HTML, CSS ( + Responsive), Djando Frame
 
 ## A tener en cuenta:
 
-### 1) Credenciales para administrar superusuario <br> 
-Username : agvanetta <br> 
+### 1) Credenciales para ingresar <br> 
+Username : Luca <br> 
 pw: agvanetta123
 
 ### 2) Funcionalidades <br>
