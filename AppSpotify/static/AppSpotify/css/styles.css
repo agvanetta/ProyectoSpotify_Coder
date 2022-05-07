@@ -541,6 +541,8 @@ audio{
 }
 
 .login__form p{
+    display: flex;
+    flex-direction: column;
     padding: 5px;
     border-radius: 10px;
     margin: 10px;
@@ -691,7 +693,6 @@ audio{
 
 @media screen and (max-width: 768px) {
     .login{
-        
         flex-direction: column; 
     }
 
@@ -711,4 +712,64 @@ audio{
     .login__title{
         display: none;
     }
+}
+
+/* REGISTER */
+
+.login__form__register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__form__register ul{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login__form__register ul li{
+    list-style: none;
+    width: 80%;
+    font-size: 13px;
+    padding: 2px;
+}
+
+.login__form__register p{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    
+}
+
+.login__form__register p input{
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 2px 0;
+    color: black;
+}
+
+.login__form__register p span{
+    padding: 5px;
+    font-size: 13px;
+}
+
+.login__form__register p label{
+    margin-top: 10px;
+    color: #1DB954;
+    font-weight: 600;
+}
+
+#button__register{
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+#button__register:hover{
+    background-color: #1DB954;
+    color: black;
 }

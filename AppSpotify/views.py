@@ -6,7 +6,7 @@ from django.views.generic import ListView
 from django.views.generic.edit import UpdateView, DeleteView 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin #vistas basadas en clases
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from AppSpotify.models import Contenido, Favoritos, Perfil
 
@@ -35,6 +35,24 @@ def login_request(request):
     return render(request, "AppSpotify/login.html", {"form":form })
 
 ## fin login ##
+
+## registro ##
+
+def register (request):
+
+    if request.method == "POST":
+        form=UserCreationForm(request.POST)
+
+        if form.is_valid():
+            username=form.cleaned_data['username']
+            form.save()
+
+            return render(request, "AppSpotify/login.html", {"creado":"Usuario Creado"})
+    
+    else:
+        form = UserCreationForm()
+
+    return render(request, "AppSpotify/registro.html", {"form":form})
 
 
 ## INICIO

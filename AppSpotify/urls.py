@@ -37,6 +37,7 @@ urlpatterns = [
     #Login
     path('login', views.login_request, name="Login"),
     path('logout', LogoutView.as_view(template_name="AppSpotify/logout.html"), name="Logout"),
+    path('register', views.register, name="Register"),
 
 
 ]

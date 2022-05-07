@@ -1,5 +1,6 @@
 from django import forms
 
+
 class PerfilFormulario(forms.Form):
     nombre = forms.CharField()
     apellido = forms.CharField()
