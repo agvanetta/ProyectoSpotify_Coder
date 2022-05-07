@@ -40,4 +40,4 @@ pw: agvanetta123
 
 
 
-https://agvanetta.pythonanywhere.com/AppSpotify/login?next=/AppSpotify/
+https://agvanetta.pythonanywhere.com/AppSpotify
