@@ -1,1 +1,1 @@
-web: gunicorn miSitio.wsgi
+web: gunicorn Spotifyheroku config:set DB_URL=database_uri_here.wsgi
