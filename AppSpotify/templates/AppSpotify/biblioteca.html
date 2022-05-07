@@ -9,6 +9,12 @@
         <div class="body__user__container">
             <span>👽</span><div>{{user}}</div>
         </div>
+
+        <form action="" method="POST"> {% csrf_token %}
+            <button  class="body__user__container" style="margin-left: 5px ; background-color: black; cursor: pointer;">
+              <a style=" text-decoration: none; background-color: black; " href="/AppSpotify/logout"> Cerrar Sesion </a>
+            </button>
+        </form>
     </div>
 
     <div class="title">Perfiles 🔍 </div>

@@ -27,17 +27,18 @@ def login_request(request):
                 return render(request, "AppSpotify/inicio.html", {'mensaje':f"Bienvenido{user}"})
         
         else:
-            return render(request, "AppSpotify/inicio.html",{"mensaje":"Error, datos incorrectos"})
+            return render(request, "AppSpotify/login.html",{"error":"Error, datos incorrectos", "input":"<button> HOLA </button>"})
     
     else:
         form = AuthenticationForm() # mostrar el fomulario
     
-    return render(request, "AppSpotify/login.html", {"form":form})
+    return render(request, "AppSpotify/login.html", {"form":form })
 
 ## fin login ##
 
 
 ## INICIO
+@login_required
 def inicio(request):
     return render(request, "AppSpotify/inicio.html")
 ## FIN INICIO

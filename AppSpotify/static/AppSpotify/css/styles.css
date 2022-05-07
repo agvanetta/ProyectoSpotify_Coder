@@ -677,6 +677,18 @@ audio{
     transition: .3s;
 }
 
+.button_again{
+    border: 1px solid;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    border-color: white;
+    margin-top: 20px;
+    padding: 7px;
+    font-weight: 600;
+}
+
 @media screen and (max-width: 768px) {
     .login{
         

@@ -22,17 +22,10 @@
           <div><img class='login__right__img' id="login__img" src=https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png width=25 alt="logo"/></div>
           <form class="login__form" action="" method="POST"> {% csrf_token %}
 
-            {{form.as_p}}
             
-            {% if form %}
-            <button type="submit">Iniciar Sesion</button>
-            {% endif %}
-            <div style="padding:10px">{{error}}</div>
-            {% if input %}
             <button  class="button__again">
-              <a style=" text-decoration: none; " href="/AppSpotify/login"> Volver a ingresar campos </a>
+              <a style=" text-decoration: none; " href="/AppSpotify/login"> Ingresar con otro usuario </a>
           </button>
-            {% endif %}
         </form>
           <div class='login__footer'>Desing Agustin Vanetta</div>
         </div > 
