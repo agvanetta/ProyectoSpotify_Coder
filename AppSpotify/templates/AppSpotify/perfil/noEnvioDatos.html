@@ -1,0 +1,44 @@
+{% extends "AppSpotify/padre.html" %}
+
+{% load static %}
+
+{% block contenidoDinamico %}
+
+<div class="body__container">
+    <div class="body__user">
+        <div class="body__user__container">
+            <span>👽</span><div>{{user}}</div>
+        </div>
+
+            <button  class="body__user__container" style="margin-left: 5px ; background-color: black; cursor: pointer;">
+              <a style=" text-decoration: none; background-color: black; " href="/AppSpotify/logout"> Cerrar Sesion </a>
+            </button>
+    </div>
+
+    <div class="title">Perfiles 🔍 </div>
+
+    <div class="perfil__container__lista" >
+        <div class="formulario__text">Buscar perfil</div>
+        <div class="form">
+            <form class="form__perfil" action="/AppSpotify/buscar/" method="GET">
+                <input id="input" type="text" name="dni" id="dni" placeholder=" Ingrese DNI del perfil">
+                <br>
+                <input class="button__enviar2" type="submit" value="Buscar">
+            </form>
+        </div>
+        <div style="color: #1DB954;">No enviaste datos, intente ingresando un DNI valido o "Listar todos los perfiles"</div>
+
+    </div>
+
+    <div class="perfil__container__lista">
+        <div style="font-size: 20px; margin-top: 30px; margin-bottom: -20px;" class="formulario__text">Listar todos los&nbsp;<span style="color: #1DB954;"> perfiles</span></div>
+        <div class="form">
+            <form class="form__perfil" action="/AppSpotify/buscarTodos/" method="GET">
+                <br>
+                <input class="button__listar" type="submit" value="Listar">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

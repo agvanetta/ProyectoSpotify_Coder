@@ -4,7 +4,7 @@ from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     ## perfiles ##
-    path('biblioteca/', views.biblioteca, name="Biblioteca"),
+    path('perfil/biblioteca/', views.biblioteca, name="Biblioteca"),
     path('buscar/', views.buscar),
     path('buscarTodos/', views.buscarTodos),
     path('perfil/', views.perfil, name="Perfil"),
@@ -38,6 +38,8 @@ urlpatterns = [
     path('login', views.login_request, name="Login"),
     path('logout', LogoutView.as_view(template_name="AppSpotify/logout.html"), name="Logout"),
     path('register', views.register, name="Register"),
+
+    path('sobreMi/', views.sobreMi, name="sobreMi"),
 
 
 ]

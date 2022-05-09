@@ -1,0 +1,93 @@
+{% extends "AppSpotify/padre.html" %}
+{% load static %}
+{% block contenidoDinamico %}
+
+<div class="body__container">
+    <div class="body__user">
+        <div class="body__user__container">
+            <span>👽</span><div>{{user}}</div>
+        </div>
+            <button  class="body__user__container" style="margin-left: 5px ; background-color: black; cursor: pointer;">
+              <a style=" text-decoration: none; background-color: black; " href="/AppSpotify/logout"> Cerrar Sesion </a>
+            </button>
+    </div>
+
+    <div id="decoration" class="title">Sobre mi</div>
+
+                <div style="display: flex;align-items: center; padding: 20px;">
+                    <div class="card">
+                        <div class="card__image"> <img class="card__image__circulo" class="img" 
+                            src="https://agvanetta.github.io/IPortfolio/assets/img/profile-img.jpg" alt="miPerfil"></div>
+                        <div class="card__name">Agustin Vanetta</div>
+                        <div class="card__artist">Software Developer</div>
+                    </div>
+                    <div>
+                        <div class="title">Agustin Vanetta</div>
+                        <div class="title" style=" color: gray; font-size: 15px; padding-top: 0;padding-bottom: 0;">Desarrollador de Software</div>
+                        <div style=" padding: 20px; text-align:justify;" >Vivo en Córdoba Capital, Argentina. En el 2020 terminé la Licenciatura 
+                            en Administración, y con el objetivo de seguir creciendo profesionalmente comencé a capacitarme
+                             en el sector TI y comencé a estudiar Data Analyst, en el camino tuve la oportunidad de ganar una
+                              beca por parte de Mercado Libre y Globant para estudiar la carrera de "Desarrollador Certificado en 
+                              Tecnología", además para complementar mi formacion opte por realizar el curso de Python en Coderhouse y ahora todas las
+                               energías están enfocadas en encontrar una organización en la
+                               cual pueda agregar valor con mi formación en IT y experiencia profesional.</div>
+                    </div>
+                </div>
+            
+
+    <div class="title">Links Utiles</div>
+    <div class="body__canciones">
+        <div class="card">
+            <div class="card__image"> <img class="img"  src="https://pbs.twimg.com/profile_images/1414990564408262661/r6YemvF9_400x400.jpg" alt="paulo"></div>
+            <div class="card__name">Github</div>
+            <a style="text-decoration: none" href="https://github.com/agvanetta" 
+            target="_blank" class="card__artist">Click aqui!</a>
+        </div>
+        <div class="card">
+            <div class="card__image"> <img src="https://www.rapidpackaging.com/wp-content/uploads/2021/03/LinkedIn-Icon-400x400-1-300x300.png" alt="lit"></div>
+            <div class="card__name">LinkedIn</div>
+            <a style="text-decoration: none" href="https://www.linkedin.com/in/agustin-vanetta-549645185/" 
+            target="_blank" class="card__artist">Click aqui!</a>
+        </div>
+        <div class="card">
+            <div class="card__image"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb7ZaSWPh0awbFWdDFQMcPu6iV2Xvwry9uT17DCFmHiez0jttYZdGdk63g5HKLNV5DTTM&usqp=CAU" alt="becerra"></div>
+            <div class="card__name">Portfolio</div>
+            <a style="text-decoration: none" href="https://agvanetta.github.io/IPortfolio/" 
+            target="_blank" class="card__artist">Click aqui!</a>
+        </div>
+        
+    </div>
+
+   
+
+    <div class="title">Otros proyectos</div>
+    <div class="body__canciones">
+        <div class="card">
+            <div class="card__image"> <img src="https://agvanetta.github.io/IPortfolio/assets/img/portfolio/portfolio-8.jpg" alt="zica"></div>
+            <div class="card__name">Robinhood</div>
+            <div class="card__artist">Inversiones</div>
+        </div>
+        <div class="card">
+            <div class="card__image"> <img src="https://agvanetta.github.io/IPortfolio/assets/img/portfolio/portfolio-4.jpg" alt="10"></div>
+            <div class="card__name">AmazonClone</div>
+            <div class="card__artist">Comercio Online</div>
+        </div>
+        <div class="card">
+            <div class="card__image"><img src="https://agvanetta.github.io/IPortfolio/assets/img/portfolio/portfolio-1.jpg" alt="duo"></div>
+            <div class="card__name">Data Analytics</div>
+            <div class="card__artist">Coderhouse</div>
+        </div>
+        <div class="card">
+            <div class="card__image"><img src="https://agvanetta.github.io/IPortfolio/assets/img/portfolio/portfolio-6.jpg" alt="ted"></div>
+            <div class="card__name">Wallet</div>
+            <div class="card__artist">Billetera Virtual</div>
+        </div>
+        <div class="card">
+            <div class="card__image"> <img src="https://agvanetta.github.io/IPortfolio/assets/img/portfolio/portfolio-2.jpg" alt="icb"></div>
+            <div class="card__name">Backend MVC</div>
+            <div class="card__artist">Digital House</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
