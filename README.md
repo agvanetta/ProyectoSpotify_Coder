@@ -15,7 +15,7 @@ El proyecto utiliza Patron MVT, Herencia HTML, CSS ( + Responsive), Djando Frame
 
 ### 1) Credenciales para ingresar <br> 
 Username : Luca <br> 
-pw: agvanetta123
+pw: agustin123
 
 ### 2) Funcionalidades <br>
   
