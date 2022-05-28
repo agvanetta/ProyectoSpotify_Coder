@@ -27,8 +27,8 @@ urlpatterns = [
     path('misfavoritos/', views.misFavoritos, name="misFavoritos"),
     path("favoritos/lista", views.FavoritosList.as_view(), name="favoritosList"),
     ##expresiones regulares##
-    path(r'^editar/(?P<pk>\d+)$', views.FavoritosUpdate.as_view(), name="Edit"),
-    path(r'^borrar/(?P<pk>\d+)$', views.FavoritosDelete.as_view(), name="Delete"),
+    path(r'^editar2/(?P<pk>\d+)$', views.FavoritosUpdate.as_view(), name="Edit2"),
+    path(r'^borrar2/(?P<pk>\d+)$', views.FavoritosDelete.as_view(), name="Delete2"),
 
 
     ## Inicio

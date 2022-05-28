@@ -180,7 +180,7 @@ class ContenidoDelete(LoginRequiredMixin, DeleteView):
 
 class ContenidoUpdate(LoginRequiredMixin, UpdateView):
     model = Contenido
-    success_url = "/AppSpotify/perfil/lista"
+    success_url = "/AppSpotify/contenido/lista"
     fields= ["nombre","artista","tipo"]
 
 ## FAVORITOS ##
