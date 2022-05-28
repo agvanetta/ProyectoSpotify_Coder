@@ -1,5 +1,5 @@
 # ProyectoSpotify_Coder
-Proyecto v1 (Pre entrega final) para el curso Python - Coderhouse
+Proyecto v2 para el curso Python - Coderhouse
 
 El proyecto debe descargarse y ejecutarse mediante "python manage.py runserver"; el mismo correra en la direccion http://localhost:8000 , cuenta con 2 ramas principales: <br>
 APP : http://localhost:8000/AppSpotify/ <br>
